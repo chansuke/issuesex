@@ -19,7 +19,8 @@ defmodule Issuesex.Mixfile do
 
   defp deps do
     [ 
-      { :httpoison, "~> 0.8" }
+      httpoison:  "~> 0.8",
+      poison:     "~> 1.5"
     ]
   end
 end
