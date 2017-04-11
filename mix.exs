@@ -3,11 +3,12 @@ defmodule Issuesex.Mixfile do
 
   def project do
     [app: :issuesex,
-     version: "0.0.1",
-     elixir: "~> 1.2",
-     build_embedded: Mix.env == :prod,
+     escript:         escript_config,
+     version:         "0.0.1",
+     elixir:          "~> 1.2",
+     build_embedded:  Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps:            deps]
   end
 
   def application do
@@ -19,5 +20,9 @@ defmodule Issuesex.Mixfile do
       httpoison:  "~> 0.8",
       poison:     "~> 1.5"
     ]
+  end
+
+  defp escript_config do
+    [ main_module: Issuesex.CLI ]
   end
 end
